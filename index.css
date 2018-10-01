@@ -1,0 +1,27 @@
+#input {
+	width:100%;
+}
+
+#sideBar{
+	background-color:lightblue;
+}
+
+#sideBar1{
+	background-color:lightblue;
+}
+
+#sideBar2{
+	background-color:lightcoral;
+}
+
+#mainSpace{
+	background-color:lightgreen;
+}
+
+.show{
+	display:block;
+}
+
+.hide{
+	display:none;
+}

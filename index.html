@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="./index.css">
+
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3" id="sideBar">
+				<form id="newMember" onsubmit="return blankCheck()">
+					<fieldset>
+				<input required type="text" id="name" placeholder="Full Name">
+				<input required type="number" id="age" placeholder="Age">
+				<input required type="text" id="job" placeholder="Occupation">
+				<input type="submit" id="add" value="Add">
+			</fieldset>
+			</form>
+			</div>
+			<div class="col-md-9" id= "mainSpace">
+				<h1 id="title"></h1>
+
+				<div id="content"></div>
+			</div>
+		</div>
+	</div>
+
+	<script src="dom.js"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>
