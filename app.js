@@ -29,7 +29,6 @@ function render() {
 render();
 
 $("#add").on("click", addAll)
-
 function addAll() {
 	if (document.getElementById('name').value=="" || document.getElementById('age').value=="" ||document.getElementById('job').value==""){
 		return false;
@@ -58,4 +57,18 @@ function addAll() {
 	$('#job').val('')
 	render();
 		}
+}
+
+$("#viewPage").on("click", setView) 
+function setView() {
+	$("#inputBar").addClass("hide");
+	$("#inputBar").removeClass("show");
+	render();
+}
+
+$("#addPage").on("click", setAdd)
+function setAdd() {
+	$("#inputBar").addClass("show");
+	$("#inputBar").removeClass("hide");
+	render();
 }

@@ -16,19 +16,32 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3" id="sideBar">
-				<form id="newMember" onsubmit="return blankCheck()">
-					<fieldset>
-				<input required type="text" id="name" placeholder="Full Name">
-				<input required type="number" id="age" placeholder="Age">
-				<input required type="text" id="job" placeholder="Occupation">
-				<input type="submit" id="add" value="Add">
-			</fieldset>
-			</form>
+				<button id="viewPage">View</button>
+				<button id="addPage">Add</button>
+				<button id="verifyPage">Verify</button>
+				<button id="updatePage">Update</button>
+				<button id="deletePage">Delete</button>
 			</div>
-			<div class="col-md-9" id= "mainSpace">
-				<h1 id="title"></h1>
+			<div class="col-md-9" id="mainSpace">
+				<div class="row">
+					<div class="col-md-12" id="inputBar">
+						<form id="newMember" onsubmit="return blankCheck()">
+							<fieldset>
+								<input required type="text" id="name" placeholder="Full Name">
+								<input required type="number" id="age" placeholder="Age">
+								<input required type="text" id="job" placeholder="Occupation">
+								<input type="submit" id="add" value="!">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12" id="textDisplay">
+						<h1 id="title"></h1>
+						<div id="content"></div>
+					</div>
+				</div>
+				</fieldset>
+				</form>
 
-				<div id="content"></div>
 			</div>
 		</div>
 	</div>

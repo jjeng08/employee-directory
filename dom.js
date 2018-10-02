@@ -13,6 +13,18 @@ function $(wantedTag) {
 		}
 	}
 
+	function  addClass(className) {
+		for (let i = 0; i < tagArray.length; i++) {
+		 tagArray[i].classList.add(className);
+		}
+	}
+	
+	function removeClass(className){
+    for (let i = 0; i < tagArray.length; i++) {
+     tagArray[i].classList.remove(className);
+    }
+  }
+
 	function on(action, aFunction) {
 		for (let i=0; i<tagArray.length; i++){
 			tagArray[i].addEventListener(action, aFunction);
@@ -38,6 +50,8 @@ function $(wantedTag) {
 		append: append,
 		on: on,
 		val: val,
-		toggleClass: toggleClass
+		toggleClass: toggleClass,
+		addClass: addClass,
+		removeClass: removeClass
 	}
 }
