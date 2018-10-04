@@ -1,20 +1,36 @@
-#input {
-	width:100%;
+#mainSpace{
+	background-color:lightgreen;
+	/* width:100%;
+	margin:0;
+	padding:0;  */
 }
 
 #sideBar{
 	background-color:lightblue;
 	text-align: center;
+	align-content: center;
 }
 
 .hide{
 	display:none;
 }
 
-#mainSpace{
-	background-color:lightgreen;
-}
 
 .show{
 	display:block;
+}
+
+.pageTitle{
+	text-align: center;
+	align-content: center;
+	margin-top: 20px;
+}
+
+.barTitle {
+	margin-top:20px;
+}
+
+.navButton {
+	border-style: none;
+	background-color: lightblue;
 }

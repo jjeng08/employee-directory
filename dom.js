@@ -1,6 +1,18 @@
 function $(wantedTag) {
 	const tagArray = document.querySelectorAll(wantedTag);
 
+  function text(content){
+    for (let i = 0; i < tagArray.length; i++) {
+      tagArray[i].innerText = content;
+    }
+	}
+
+	function html(content){
+    for (let i = 0; i < tagArray.length; i++) {
+      tagArray[i].innerHTML = content;
+    }
+  }
+
 	function empty() {
 		for (let i=0; i<tagArray.length; i++){
 			tagArray[i].innerHTML = "";
@@ -45,13 +57,25 @@ function $(wantedTag) {
 		}
 	}
 
+	function findObjectByKey(array, key, value) {
+		for (let i = 0; i < array.length; i++) {
+			if (array[i][key] === value) {
+				return array[i];
+			}
+    }
+    return null;
+}
+
 	return {
+		text: text,
+		html: html,
 		empty: empty,
 		append: append,
 		on: on,
 		val: val,
 		toggleClass: toggleClass,
 		addClass: addClass,
-		removeClass: removeClass
+		removeClass: removeClass,
+		findObjectByKey: findObjectByKey
 	}
 }

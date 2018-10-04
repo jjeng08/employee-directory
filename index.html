@@ -13,37 +13,71 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-3" id="sideBar">
-				<button id="viewPage">View</button>
-				<button id="addPage">Add</button>
-				<button id="verifyPage">Verify</button>
-				<button id="updatePage">Update</button>
-				<button id="deletePage">Delete</button>
+				<div class="row">
+					<div class="col-md-12 barTitle"> <h2>Navigation</h2></div>
+				</div>
+				<div class="row">
+						<div class="col-md-12"> 
+					<div> <button class = "navButton" id="viewPage">View</button> </div>
+					<div> <button class = "navButton" id="viewPage">View</button> </div>
+					<div> <button class = "navButton" id="addPage">Add</button> </div>
+					<div> <button class = "navButton" id="verifyPage">Verify</button> </div>
+					<div> <button class = "navButton" id="modPage">Modify</button> </div>
+					<div> <button class = "navButton" id="deletePage">Delete</button> </div>
+				</div>
+				</div>
 			</div>
 			<div class="col-md-9" id="mainSpace">
 				<div class="row">
-					<div class="col-md-12" id="inputBar">
-						<form id="newMember" onsubmit="return blankCheck()">
+					<div class= "col-md-12 pageTitle"><h2 id="title"></h2></div>
+					
+					<div class="col-md-12" id="addBar">
+						<form id="addMember" onsubmit="return blankverify()">
 							<fieldset>
-								<input required type="text" id="name" placeholder="Full Name">
-								<input required type="number" id="age" placeholder="Age">
-								<input required type="text" id="job" placeholder="Occupation">
-								<input type="submit" id="add" value="!">
+								<input required type="text" id="nameAdd" placeholder="Full Name">
+								<input required type="number" id="ageAdd" placeholder="Age">
+								<input required type="text" id="jobAdd" placeholder="Occupation">
+								<input type="submit" id="addButton" value="+">
+							</fieldset>
+						</form>
+					</div>
+					<div class="col-md-12" id="verifyBar">
+						<form id="verifyMember" onsubmit="return blankverify()">
+							<fieldset>
+								<input required type="text" id="nameVerify" placeholder="Full Name">
+								<input type="submit" id="verifyButton" value="?">
+							</fieldset>
+						</form>
+						<div id="verifyResult"></div>
+					</div>
+					<div class="col-md-12" id="modBar">
+						<form id="modMember" onsubmit="return blankverify()">
+							<fieldset>
+								<input required type="text" id="nameID" placeholder="Enter Employee Name">
+								<input required type="text" id="newAge" placeholder="Enter Age">
+								<input required type="text" id="newJob" placeholder="Enter Job">
+								<input type="submit" id="modButton" value="=">
+							</fieldset>
+						</form>
+					</div>
+					<div class="col-md-12" id="deleteBar">
+						<form id="deleteMember" onsubmit="return blankverify()">
+							<fieldset>
+								<input required type="text" id="nameDelete" placeholder="Full Name">
+								<input type="submit" id="deleteButton" value="-">
+							</fieldset>
+						</form>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12" id="textDisplay">
-						<h1 id="title"></h1>
 						<div id="content"></div>
 					</div>
 				</div>
-				</fieldset>
-				</form>
-
 			</div>
-		</div>
 	</div>
 
 	<script src="dom.js"></script>
