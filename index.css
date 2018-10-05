@@ -1,0 +1,117 @@
+/*Title Bar*/
+#heading{
+	padding: 0;
+}
+#companyLogo {
+	text-align: center;
+	align-content:center;
+	padding:10px;
+	border-bottom-style:solid;
+	border-width: 6px;
+	border-color:black;
+	font-size: 48px;
+	background-color:lightgrey;
+}
+#slogan{
+	font-size:20px;
+}
+
+/*SideBar*/
+#sideBar{
+	background-color:rgb(41, 53, 53);
+	text-align: center;
+	align-content: center;
+}
+.barTitle {
+	margin:30px 0px 20px 0px;
+	font-size: 30px;
+	font-weight:bold;
+	color: whitesmoke;
+}
+
+#addressBook {
+	width:40px;
+	margin-bottom:15px;
+	border-radius:6px;
+}
+.navButton {
+	font-family: Arial, Helvetica, sans-serif;
+	color: whitesmoke;
+	font-size: 20px;
+	font-weight: bold;
+	background-color:rgb(41, 53, 53);
+	border-style:none;
+	margin: 10px;
+}
+#verifyResult{
+	width:200px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	font-size:18px;
+	color:grey;
+	line-height:30px;
+	height:30px;
+	margin-top:10px;
+	background-color:white;
+	border-color:lightgrey;
+	border-style:solid;
+	border-width:1px;
+	border-radius: 3px;
+}
+
+/*Main Space*/
+#mainSpace{
+	background-color:whitesmoke;
+}
+
+.pageTitle{
+	text-align: center;
+	align-content: center;
+	margin:20px;
+	font-size: 36px;
+	font-weight:bold;
+	color: rgb(41, 53, 53);
+}
+
+#content{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
+}
+
+.objectDiv{
+	border-style:solid;
+	border-color:rgb(41, 53, 53);
+	margin-bottom:20px;
+	padding-top:10px;
+	padding-left:10px;
+	border-radius: 5px;
+}
+
+#textDisplay{
+	padding-top:20px;
+}
+
+input{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/*Interesting error. I tried centering my inputs through <divs> in numerous ways. I did it immediately around the inputs, around the whole
+form, around the section the form was in, etc. For some reason, nothing worked. However, the moment I put in a fieldset, everything 
+was perfect. Perhaps there was some issue with closing brackets/a floating </div> that I didn't notice, but all I know is that when 
+<div> was giving me grief, fieldset worked.*/
+fieldset{
+	align-content: center;
+	text-align:center;
+}
+
+
+/*Utility CSS*/
+.hide{
+	display:none;
+}
+.show{
+	display:block;
+}
+
