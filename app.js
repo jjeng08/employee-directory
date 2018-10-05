@@ -58,9 +58,8 @@ const employeeList = [{
 		let officeData = info.office;
 		let phoneData = info.phone;
 
-		$("#content").append(`<p>Employee: ${nameData}</p>`);
-		$("#content").append(`<p>Office: ${officeData}</p>`);
-		$("#content").append(`<p>Phone Number: ${phoneData}</p> <br/>`);
+		let objectDiv = `<div class="objectDiv"><p>Employee: ${nameData}</p><p>Office: ${officeData}</p><p>Phone Number: ${phoneData}</p></div>`
+		$("#content").append(objectDiv);
 	}
 }
 
