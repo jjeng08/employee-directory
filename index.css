@@ -1,36 +1,93 @@
-#mainSpace{
-	background-color:lightgreen;
-	/* width:100%;
-	margin:0;
-	padding:0;  */
+/*Logo ACross the Top*/
+#heading{
+	padding: 0;
+}
+
+#companyLogo {
+	text-align: center;
+	align-content:center;
+	padding:10px;
+	border-bottom-style:solid;
+	border-width: 6px;
+	border-color:black;
+	font-size: 48px;
+	background-color:lightgrey;
+}
+#slogan{
+	font-size:20px;
+}
+/*SideBar*/
+.barTitle {
+margin:20px 0px 20px 0px;
+font-size: 30px;
+font-weight:bold;
+color: whitesmoke;
 }
 
 #sideBar{
-	background-color:lightblue;
+	background-color:rgb(41, 53, 53);
 	text-align: center;
 	align-content: center;
 }
 
-.hide{
-	display:none;
+.navButton {
+	font-family: Arial, Helvetica, sans-serif;
+	color: whitesmoke;
+	font-size: 20px;
+	font-weight: bold;
+	background-color:rgb(41, 53, 53);
+	border-style:none;
+	margin: 10px;
 }
 
+#verifyResult {
+	height: 40px;
+	width:200px;
+}
 
-.show{
-	display:block;
+/*Main Space*/
+#mainSpace{
+	background-color:whitesmoke;
+
 }
 
 .pageTitle{
 	text-align: center;
 	align-content: center;
-	margin-top: 20px;
+	margin:20px;
+	font-size: 36px;
+	font-weight:bold;
+	color: rgb(41, 53, 53);
 }
 
-.barTitle {
-	margin-top:20px;
+#content{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
 }
 
-.navButton {
-	border-style: none;
-	background-color: lightblue;
+input{
+	margin-left:auto;
+	margin-right:auto;
 }
+
+fieldset{
+	align-content: center;
+	text-align:center;
+}
+
+#verifyResult{
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	margin-top:10px;
+}
+
+/*Utility CSS*/
+.hide{
+	display:none;
+}
+.show{
+	display:block;
+}
+

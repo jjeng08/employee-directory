@@ -1,33 +1,63 @@
 //Basic Data
-const bios = [
-	{
-		name: "Abigail",
-		age: 32,
-		job: "accountant"
-	},
-	{
-		name: "Benjamin",
-		age: 27,
-		job: "taxidermist"
-	},
-	{
-		name: "Orgoth the Unclean",
-		age: 439,
-		job: "therapist",
-	}
-];
+const employeeList = [{
+	name: 'Jan',
+	office: 1,
+	phone: '222-222-2222'
+  },
+  {
+	name: 'Juan',
+	office: 304,
+	phone: '489-789-8789'
+  },
+  {
+	name: 'Margie',
+	office: 789,
+	phone: '789-789-7897'
+  },
+  {
+	name: 'Sara',
+	office: 32,
+	phone: '222-789-4654'
+  },
+  {
+	name: 'Tyrell',
+	office: 3,
+	phone: '566-621-0452'
+  },
+  {
+	name: 'Tasha',
+	office: 213,
+	phone: '789-766-5675'
+  },
+  {
+	name: 'Ty',
+	office: 211,
+	phone: '789-766-7865'
+  },
+  {
+	name: 'Sarah',
+	office: 345,
+	phone: '222-789-5231'
+  }
+  ];
 
-function render() {
+  function render() {
 	$("#content").empty();
-	for (let i = 0; i < bios.length; i++) {
-		const info = Object.values(bios[i]);
-		for (let x = 0; x < info.length; x++) {
-			$("#content").append(`<p>${info[x]}</p>`);
-		}
+
+	for (let i = 0; i < employeeList.length; i++) {
+		let info = employeeList[i];
+
+		let nameData = info.name;
+		let officeData = info.office;
+		let phoneData = info.phone;
+
+		$("#content").append(`<p>Employee: ${nameData}</p>`);
+		$("#content").append(`<p>Office: ${officeData}</p>`);
+		$("#content").append(`<p>Phone Number: ${phoneData}</p> <br/>`);
 	}
 }
 
-const keys = ["name", "age", "job"]
+const keys = ["name", "office", "phone"]
 
 //Default Settings (View Page)
 $("#viewPage").on("click", setView)
@@ -41,8 +71,7 @@ function setView() {
 	$("#deleteBar").addClass("hide");
 	$("#deleteBar").removeClass("show");
 
-	$("#title").empty();
-	$("#title").text("View Page");
+	$(".pageTitle").text("View Page");
 
 	render();
 }
@@ -54,29 +83,29 @@ setView();
 $("#addButton").on("click", addAll)
 function addAll(event) {
 	event.preventDefault();
-	if (document.getElementById('nameAdd').value == "" || document.getElementById('ageAdd').value == "" || document.getElementById('jobAdd').value == "") {
+	if (document.getElementById('nameAdd').value == "" || document.getElementById('officeAdd').value == "" || document.getElementById('phoneAdd').value == "") {
 		return false;
 	}
 	else {
 
 		const nameVal = $('#nameAdd').val();
-		const ageVal = $('#ageAdd').val();
-		const jobVal = $('#jobAdd').val();
+		const officeVal = $('#officeAdd').val();
+		const phoneVal = $('#phoneAdd').val();
 
 		let values = [
 			nameVal,
-			ageVal,
-			jobVal,
+			officeVal,
+			phoneVal,
 		];
 
 		let result = {};
 		keys.forEach((key, i) => result[key] = values[i]);
 		console.log(result);
 
-		bios.push(result);
+		employeeList.push(result);
 		$('#nameAdd').val('');
-		$('#ageAdd').val('');
-		$('#jobAdd').val('')
+		$('#officeAdd').val('');
+		$('#phoneAdd').val('')
 		render();
 	}
 }
@@ -92,8 +121,7 @@ function setAdd() {
 	$("#deleteBar").addClass("hide");
 	$("#deleteBar").removeClass("show");
 
-	$("title").empty();
-	$("#title").text("Add Page");
+	$(".pageTitle").text("Add Page");
 
 	render();
 }
@@ -103,8 +131,8 @@ $("#verifyButton").on("click", verifyEntry)
 function verifyEntry(event) {
 	event.preventDefault();
 	const desiredVerify = $("#nameVerify").val();
-	for (let i = 0; i < bios.length; i++) {
-		if (bios[i].name === desiredVerify) {
+	for (let i = 0; i < employeeList.length; i++) {
+		if (employeeList[i].name === desiredVerify) {
 			$("#verifyResult").html("<p> Member exists.</p>");
 			return;
 		}
@@ -125,36 +153,39 @@ function setVerify() {
 	$("#deleteBar").addClass("hide");
 	$("#deleteBar").removeClass("show");
 
-	$("title").empty();
-	$("#title").text("Verify Page");
+	$(".pageTitle").text("Verify Page");
 
 	render();
 }
 
 //Mod Page
 $("#modButton").on("click", modEntry)
-function modEntry() {
+function modEntry(event) {
+	event.preventDefault();
 
-	if (document.getElementById('nameID').value == "" || document.getElementById('newAge').value == "" || document.getElementById('newJob').value == "") {
+	if (document.getElementById('nameID').value == "" || document.getElementById('newOffice').value == "" || document.getElementById('newPhone').value == "") {
 		return false;
 	}
 	else {
 
 	const nameID = $("#nameID").val();
-	const newAge = $("#newAge").val();
-	const newJob = $("#newJob").val();
+	console.log(nameID);
+	const newOffice = $("#newOffice").val();
+	console.log(newOffice);
+	const newPhone = $("#newPhone").val();
+	console.log(newPhone);
 
 
-	for (let i = 0; i < bios.length; i++) {
-		if (bios[i].name === nameID) {
-			bios[i].age = newAge;
-			bios[i].job = newJob;
+	for (let i = 0; i < employeeList.length; i++) {
+		if (employeeList[i].name === nameID) {
+			employeeList[i].office = newOffice;
+			employeeList[i].phone = newPhone;
 		}
 	}
 
 	$("#nameID").val('');
-	$("#newAge").val('');
-	$("#newJob").val('');
+	$("#newOffice").val('');
+	$("#newPhone").val('');
 	render();
 }
 }
@@ -171,8 +202,7 @@ function setMod() {
 	$("#deleteBar").addClass("hide");
 	$("#deleteBar").removeClass("show");
 
-	$("title").empty();
-	$("#title").text("Modify Page");
+	$(".pageTitle").text("Modify Page");
 
 	render();
 }
@@ -183,9 +213,9 @@ $("#deleteButton").on("click", deleteEntry)
 function deleteEntry() {
 
 	const desiredDelete = $("#nameDelete").val();
-	for (let i = 0; i < bios.length; i++) {
-		if (bios[i].name === desiredDelete) {
-			bios.splice(i, 1);
+	for (let i = 0; i < employeeList.length; i++) {
+		if (employeeList[i].name === desiredDelete) {
+			employeeList.splice(i, 1);
 		}
 	}
 
@@ -205,8 +235,7 @@ function setDelete() {
 	$("#deleteBar").addClass("show");
 	$("#deleteBar").removeClass("hide");
 
-	$("title").empty();
-	$("#title").text("Delete Page");
+	$(".pageTitle").text("Delete Page");
 
 	render();
 }

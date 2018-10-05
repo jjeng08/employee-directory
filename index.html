@@ -14,14 +14,17 @@
 
 <body>
 	<div class="container-fluid">
+			<div class="row">
+					<div class="col-md-12" id="companyLogo">Generic Coropration Incorporated
+						<div id="slogan">"Taking Boring to Whole New Levels"</div></div>
+				</div>
 		<div class="row">
 			<div class="col-md-3" id="sideBar">
 				<div class="row">
-					<div class="col-md-12 barTitle"> <h2>Navigation</h2></div>
+					<div class="col-md-12 barTitle"> Navigation</div>
 				</div>
 				<div class="row">
 						<div class="col-md-12"> 
-					<div> <button class = "navButton" id="viewPage">View</button> </div>
 					<div> <button class = "navButton" id="viewPage">View</button> </div>
 					<div> <button class = "navButton" id="addPage">Add</button> </div>
 					<div> <button class = "navButton" id="verifyPage">Verify</button> </div>
@@ -32,14 +35,14 @@
 			</div>
 			<div class="col-md-9" id="mainSpace">
 				<div class="row">
-					<div class= "col-md-12 pageTitle"><h2 id="title"></h2></div>
+					<div class= "col-md-12 pageTitle"></div>
 					
 					<div class="col-md-12" id="addBar">
 						<form id="addMember" onsubmit="return blankverify()">
 							<fieldset>
-								<input required type="text" id="nameAdd" placeholder="Full Name">
-								<input required type="number" id="ageAdd" placeholder="Age">
-								<input required type="text" id="jobAdd" placeholder="Occupation">
+								<input required type="text" id="nameAdd" placeholder="Name">
+								<input required type="number" id="officeAdd" placeholder="Office">
+								<input required type="text" id="phoneAdd"  placeholder="123-456-7890">
 								<input type="submit" id="addButton" value="+">
 							</fieldset>
 						</form>
@@ -47,18 +50,19 @@
 					<div class="col-md-12" id="verifyBar">
 						<form id="verifyMember" onsubmit="return blankverify()">
 							<fieldset>
-								<input required type="text" id="nameVerify" placeholder="Full Name">
+								<input required type="text" id="nameVerify" placeholder="Name">
 								<input type="submit" id="verifyButton" value="?">
+								<div id="verifyResult"></div>
 							</fieldset>
 						</form>
-						<div id="verifyResult"></div>
+
 					</div>
 					<div class="col-md-12" id="modBar">
 						<form id="modMember" onsubmit="return blankverify()">
 							<fieldset>
 								<input required type="text" id="nameID" placeholder="Enter Employee Name">
-								<input required type="text" id="newAge" placeholder="Enter Age">
-								<input required type="text" id="newJob" placeholder="Enter Job">
+								<input required type="text" id="newOffice" placeholder="Enter Office">
+								<input required type="text" id="newPhone" placeholder="Enter phone">
 								<input type="submit" id="modButton" value="=">
 							</fieldset>
 						</form>
@@ -66,7 +70,7 @@
 					<div class="col-md-12" id="deleteBar">
 						<form id="deleteMember" onsubmit="return blankverify()">
 							<fieldset>
-								<input required type="text" id="nameDelete" placeholder="Full Name">
+								<input required type="text" id="nameDelete" placeholder="Name">
 								<input type="submit" id="deleteButton" value="-">
 							</fieldset>
 						</form>
