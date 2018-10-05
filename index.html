@@ -9,54 +9,69 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="./index.css">
 
-	<title>Document</title>
+	<title>Generic Corp Inc. Employees</title>
 </head>
 
 <body>
 	<div class="container-fluid">
-			<div class="row">
-					<div class="col-md-12" id="companyLogo">Generic Coropration Incorporated
-						<div id="slogan">"Taking Boring to Whole New Levels"</div></div>
-				</div>
+		<!-- A banner section to put a group name and information. Kept basic for this project. -->
 		<div class="row">
-			<div class="col-md-3" id="sideBar">
-				<div class="row">
-					<div class="col-md-12 barTitle"> Navigation</div>
-				</div>
-				<div class="row">
-						<div class="col-md-12"> 
-					<div> <button class = "navButton" id="viewPage">View</button> </div>
-					<div> <button class = "navButton" id="addPage">Add</button> </div>
-					<div> <button class = "navButton" id="verifyPage">Verify</button> </div>
-					<div> <button class = "navButton" id="modPage">Modify</button> </div>
-					<div> <button class = "navButton" id="deletePage">Delete</button> </div>
-				</div>
-				</div>
+			<div class="col-md-12" id="companyLogo">Generic Coropration Incorporated
+				<div id="slogan">"Taking Boring to Whole New Levels"</div>
 			</div>
+		</div>
+
+		<!-- All the page content was put in one row: no need for additional divison. -->
+		<div class="row">
+			<!-- The navigation bar at the side: the title appears at the top, and all buttons list under as one column. -->
+			<div class="col-md-3" id="sideBar">
+				<div class="barTitle"> Navigation</div>
+				<div> <button class="navButton" id="viewPage">View</button> </div>
+				<div> <button class="navButton" id="addPage">Add</button> </div>
+				<div> <button class="navButton" id="verifyPage">Verify</button> </div>
+				<div> <button class="navButton" id="modPage">Modify</button> </div>
+				<div> <button class="navButton" id="deletePage">Delete</button> </div>
+			</div>
+
+			<!-- The dynamic part of the page appears here. -->
 			<div class="col-md-9" id="mainSpace">
+				<!-- A separation was put in place to keep the inputs/buttons and titles separate from the rendered list: it's easier to manage. -->
 				<div class="row">
-					<div class= "col-md-12 pageTitle"></div>
-					
+					<div class="col-md-12 pageTitle"></div>
+
+					<!-- Here, things get unusual because I had two main objectives:
+							1. Build everythign relying as much on the DOM library as possible.
+							2. Make a separate "page" for every section, much like how we had separate index/portfolio/contact pages.
+						In retrospect, the code could've been dryer if I'd varied from these ideas, but by the time I went back, the process
+						produced very odd errors. For example, by taking in the same input, the Modify section would Add a new object based 
+						on the 3 inputs while also modifying the existing list.-->
+
+					<!-- The Add page requires all 3 pieces of information be submitted together so it can create a complete object every time 
+					(hence the blankVerify(). This protection was extended to all other documents) -->
 					<div class="col-md-12" id="addBar">
 						<form id="addMember" onsubmit="return blankverify()">
 							<fieldset>
 								<input required type="text" id="nameAdd" placeholder="Name">
 								<input required type="number" id="officeAdd" placeholder="Office">
-								<input required type="text" id="phoneAdd"  placeholder="123-456-7890">
+								<input required type="text" id="phoneAdd" placeholder="123-456-7890">
 								<input type="submit" id="addButton" value="+">
 							</fieldset>
 						</form>
 					</div>
+
+					<!-- The Verify page searches for a name and returns if it exists. -->
 					<div class="col-md-12" id="verifyBar">
 						<form id="verifyMember" onsubmit="return blankverify()">
 							<fieldset>
 								<input required type="text" id="nameVerify" placeholder="Name">
 								<input type="submit" id="verifyButton" value="?">
-								<div id="verifyResult"></div>
+								<div id="verifyResult">Result</div>
 							</fieldset>
 						</form>
-
 					</div>
+
+					<!-- The Mod bar requires a user to submit an existing name and fill in the two other pieces of information. 
+					While a bit cumbersome, I intentionally kept this in to ensure the user didn't forget to make changes.-->
 					<div class="col-md-12" id="modBar">
 						<form id="modMember" onsubmit="return blankverify()">
 							<fieldset>
@@ -67,6 +82,8 @@
 							</fieldset>
 						</form>
 					</div>
+
+					<!-- The Delete bar will only take the name and removes the entire object. -->
 					<div class="col-md-12" id="deleteBar">
 						<form id="deleteMember" onsubmit="return blankverify()">
 							<fieldset>
@@ -76,16 +93,19 @@
 						</form>
 					</div>
 				</div>
+
+				<!-- The employee roster appears here. -->
 				<div class="row">
 					<div class="col-md-12" id="textDisplay">
 						<div id="content"></div>
 					</div>
 				</div>
-			</div>
-	</div>
 
-	<script src="dom.js"></script>
-	<script src="app.js"></script>
+			</div>
+		</div>
+
+		<script src="dom.js"></script>
+		<script src="app.js"></script>
 </body>
 
 </html>
